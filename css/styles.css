@@ -1,1 +1,90 @@
+@font-face {
+    font-family: "Dosis";
+    src: url("/Dosis/Dosis-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+    font-family: "Dosis";
+    background-color: #000;
+    color: orange;
+}
+
+a {
+    color: orange;
+}
+
+/* Index Page */
+
+#loader {
+    background: #000 url("/images/loader.gif") no-repeat center;
+    height: 100vh;
+    width: 100vh;
+    position: fixed;
+    z-index: 100;
+}
+
+nav {
+    position: absolute;
+}
+
+.container {
+    position: relative;
+    margin-top: 50px;
+    border-style: double;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* Contact Page */
+h1 {
+    text-align: center;
+    color: orange;
+}
+
+form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50vh;
+}
+
+label {
+    color: orange;
+}
+
+.contactForm {
+    border-style: groove;
+    width: max-content;
+    margin: 30px auto;
+}
+
+input {
+    display: block;
+    padding: 10px 35px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px auto;
+    margin-bottom: 20px;
+    align-self: center;
+    color: orange;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
+    padding: 3px;
+    display: none;
+}
+
+.message {
+    color: green;
+    background: white;
+
+}
 
