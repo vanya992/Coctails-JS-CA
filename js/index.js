@@ -48,11 +48,11 @@ async function fetchCharacters() {
 fetchCharacters();
 
 
-const loader = document.getElementById("loader")
+// const loader = document.getElementById("loader")
 
-window.addEventListener("load", function () {
-    loader.style.display = "none";
-})
+// window.addEventListener("load", function () {
+//     loader.style.display = "none";
+// })
 
 
 
