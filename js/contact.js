@@ -1,4 +1,4 @@
-const form = document.querySelector(".contactForm");
+const form = document.querySelector("form");
 const firstName = document.getElementById("name");
 const nameError = document.getElementById("firstNameError");
 const subject = document.getElementById("subject");
@@ -7,13 +7,14 @@ const email = document.getElementById("email");
 const emailError = document.getElementById("emailError");
 const address = document.getElementById("address");
 const addressError = document.getElementById("addressError");
-const message = document.querySelector(".message");
+const message = document.querySelector(".message_success");
+const button = document.querySelector("button")
 
     function validateForm(event) {
 
         event.preventDefault();
 
-        if (checkLength(firstName.value, 0) === true) {
+        if (checkLength(firstName.value, 1) === true) {
             nameError.style.display = "none";
         } else {
             nameError.style.display = "block";
@@ -38,9 +39,6 @@ const message = document.querySelector(".message");
         }  
 };
 
-
-form.addEventListener("submit", validateForm);
-
 function checkLength(value, len) {
     if (value.trim().length > len) {
         return true;
@@ -53,5 +51,36 @@ function validateEmail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const emailMatches = regEx.test(email);
     return emailMatches;
+};
+
+
+form.addEventListener("submit", validateForm);
+
+
+function checkIfButtonIsDisabled() {
+    if (validateForm === true) {
+        button.disabled = false;
+    } else {
+        message.innerHTML = "";
+        button.disabled = true;
+    }
 }
+
+function submitForm(event) {
+    event.preventDefault();
+
+    message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`
+    
+    form.reset();
+}
+
+form.addEventListener("submit", submitForm);
+
+firstName.addEventListener("keyup", checkIfButtonIsDisabled);
+subject.addEventListener("keyup", checkIfButtonIsDisabled);
+email.addEventListener("keyup", checkIfButtonIsDisabled);
+address.addEventListener("keyup", checkIfButtonIsDisabled);
+
+
+
 

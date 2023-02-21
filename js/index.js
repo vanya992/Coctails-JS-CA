@@ -10,7 +10,7 @@ const id = params.get("id");
 
 console.log(id);
 
-const url = "https://hp-api.onrender.com/api/characters";
+const url = "https://hp-api.onrender.com/api/characters" + id;
 
 
 
