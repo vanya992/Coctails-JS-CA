@@ -55,34 +55,3 @@ function validateEmail(email) {
     return emailMatches;
 }
 
-function submitForm(event) {
-    event.preventDefault();
-
-    if (checkLength(firstName.value, 0) && checkLength(subject.value, 10) && validateEmail(email.value) && checkLength(address.value)) {
-        message.innerHTML = '<div class="message">Your message has been sent!</div>'
-    } else {
-        message.innerHTML = "";
-    }
-
-    form.reset();
-}
-
-form.addEventListener("submit", submitForm);
-
-
-function checkIfSubmitButtonIsDisabled() {
-    if (checkLength(firstName.value, 0) && checkLength(subject.value, 10) && validateEmail(email.value) && checkLength(address.value)) {
-        button.disabled = false;
-    } else {
-        message.innerHTML = "";
-        button.disabled = true;
-    }
-}
-
-checkIfSubmitButtonIsDisabled();
-
-firstName.addEventListener("keyup", checkIfSubmitButtonIsDisabled);
-subject.addEventListener("keyup", checkIfSubmitButtonIsDisabled);
-email.addEventListener("keyup", checkIfSubmitButtonIsDisabled);
-address.addEventListener("keyup", checkIfSubmitButtonIsDisabled);
-

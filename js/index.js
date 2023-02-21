@@ -12,6 +12,8 @@ console.log(id);
 
 const url = "https://hp-api.onrender.com/api/characters";
 
+
+
 async function fetchCharacters() {
     try {const response = await fetch(url);
 
@@ -48,11 +50,8 @@ async function fetchCharacters() {
 fetchCharacters();
 
 
-// const loader = document.getElementById("loader")
-
-// window.addEventListener("load", function () {
-//     loader.style.display = "none";
-// })
-
+window.addEventListener("load", () => {
+    document.querySelector(".loader").classList.add("loader--hidden")
+});
 
 
