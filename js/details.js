@@ -24,18 +24,18 @@ console.log(url);
 
                 console.log(coctails);
                     
-                // const listOfIngredients = [coctails.strIngredient1, coctails.strIngredient2, coctails.strIngredient3,
-                // coctails.strIngredient4, coctails.strIngredient5, coctails.strIngredient6, coctails.strIngredient7,
-                // coctails.strIngredient8, coctails.strIngredient9, coctails.strIngredient10];
+                const listOfIngredients = [coctails.strIngredient1, coctails.strIngredient2, coctails.strIngredient3,
+                coctails.strIngredient4, coctails.strIngredient5, coctails.strIngredient6, coctails.strIngredient7,
+                coctails.strIngredient8, coctails.strIngredient9, coctails.strIngredient10];
             
             
-                // const filteredIngredients = listOfIngredients.filter(filterIngredients).join(" + ")
+                const filteredIngredients = listOfIngredients.filter(filterIngredients).join(" + ")
 
-                //     function filterIngredients(listOfIngredients) {
-                //         if (listOfIngredients !== null) {
-                //             return true;
-                //         }
-                // };
+                    function filterIngredients(listOfIngredients) {
+                        if (listOfIngredients !== null) {
+                            return true;
+                        }
+                };
             
 
                 
@@ -44,7 +44,7 @@ console.log(url);
                                     <div><img class="img" src="${coctails.strDrinkThumb}"></div>
                                     <div><h4>${coctails.strInstructions}</h4></div>
                                     <div>Served in: ${coctails.strGlass}</div>
-                                    `
+                                    <div>Short list of ingridients: ${filteredIngredients}</div>`
         }
             
 
