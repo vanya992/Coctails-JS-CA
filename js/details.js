@@ -9,9 +9,7 @@ const id = params.get("id");
 console.log(id);
 
 
-const url = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php?idDrink=" + id;
-
-console.log(url);
+const url = "https://www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + id;
 
 
     async function detailedCoctail() {
@@ -36,9 +34,6 @@ console.log(url);
                             return true;
                         }
                 };
-            
-
-                
             
                 details.innerHTML += `<h1>${coctails.strDrink}</h1>
                                     <div><img class="img" src="${coctails.strDrinkThumb}"></div>

@@ -14,7 +14,7 @@ const button = document.querySelector("button")
 
         event.preventDefault();
 
-        if (checkLength(firstName.value, 1) === true) {
+        if (checkLength(firstName.value, 0) === true) {
             nameError.style.display = "none";
         } else {
             nameError.style.display = "block";
@@ -40,6 +40,7 @@ const button = document.querySelector("button")
 };
 
 
+
 function checkLength(value, len) {
     if (value.trim().length > len) {
         return true;
@@ -59,7 +60,7 @@ function validateEmail(email) {
 
 
 function checkIfButtonIsDisabled() {
-    if (checkLength(firstName.value, 1) == true || checkLength(subject.value, 10) == true || validateEmail(email.value) == true || checkLength(address.value, 25) == true) {
+    if (validateForm === true) {
         button.disabled = false;
     } else {
         message.innerHTML = "";
@@ -67,20 +68,20 @@ function checkIfButtonIsDisabled() {
     }
 }
 
-function submitForm(event) {
-    event.preventDefault();
+// function submitForm(event) {
+//     event.preventDefault();
 
-    message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`
+//     message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`
     
-    form.reset();
-}
+//     form.reset();
+// }
 
-form.addEventListener("submit", submitForm);
+// form.addEventListener("submit", submitForm);
 
-firstName.addEventListener("keyup", checkIfButtonIsDisabled);
-subject.addEventListener("keyup", checkIfButtonIsDisabled);
-email.addEventListener("keyup", checkIfButtonIsDisabled);
-address.addEventListener("keyup", checkIfButtonIsDisabled);
+// firstName.addEventListener("keyup", checkIfButtonIsDisabled);
+// subject.addEventListener("keyup", checkIfButtonIsDisabled);
+// email.addEventListener("keyup", checkIfButtonIsDisabled);
+// address.addEventListener("keyup", checkIfButtonIsDisabled);
 
 window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("loader--hidden")
