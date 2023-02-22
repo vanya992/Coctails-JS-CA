@@ -14,6 +14,7 @@ body {
     background-image: linear-gradient(135deg, violet, purple);
     width: 100vw;
     color: black;
+    margin: 0;
 }
 
 .loader {
