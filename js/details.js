@@ -9,45 +9,49 @@ const id = params.get("id");
 console.log(id);
 
 
-const url = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php/" + id;
+const url = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php?idDrink=" + id;
 
-async function detailedCoctail() {
-    try {
-        const response = await fetch(url);
+console.log(url);
 
-        const results = await response.json();
 
-        const coctails = results.drinks;
+    async function detailedCoctail() {
+            try {
+                const response = await fetch(url);
 
-        // console.log(coctails);
+                const results = await response.json();
 
-        for (let i = 0; i < coctails.length; i++) {
+                const coctails = results.drinks;
+
+                console.log(coctails);
+                    
+                const listOfIngredients = [coctails.strIngredient1, coctails.strIngredient2, coctails.strIngredient3,
+                coctails.strIngredient4, coctails.strIngredient5, coctails.strIngredient6, coctails.strIngredient7,
+                coctails.strIngredient8, coctails.strIngredient9, coctails.strIngredient10];
             
-            const listOfIngredients = [coctails[i].strIngredient1, coctails[i].strIngredient2, coctails[i].strIngredient3,
-                coctails[i].strIngredient4, coctails[i].strIngredient5, coctails[i].strIngredient6, coctails[i].strIngredient7,
-                coctails[i].strIngredient8, coctails[i].strIngredient9, coctails[i].strIngredient10];
             
-            
-            const filteredIngredients = listOfIngredients.filter(filterIngredients).join(" + ")
+                const filteredIngredients = listOfIngredients.filter(filterIngredients).join(" + ")
 
-            function filterIngredients(listOfIngredients) {
-                if (listOfIngredients !== null) {
-                    return true;
-                }
+                    function filterIngredients(listOfIngredients) {
+                        if (listOfIngredients !== null) {
+                            return true;
+                        }
+                };
+            
+
+                
+            
+                details.innerHTML += `<h1>${coctails.strDrink}</h1>
+                                    <div><img class="img" src="${coctails.strDrinkThumb}"></div>
+                                    <div><h4>${coctails.strInstructions}</h4></div>
+                                    <div>Served in: ${coctails.strGlass}</div>
+                                    <div>Short list of ingridients: ${filteredIngredients}</div>`
+        }
+            
+
+            catch (error) {
+                console.log(error);
             }
-            
-            details.innerHTML = `<h1>${coctails[i].strDrink}</h1>
-                            <div><img class="img" src="${coctails[i].strDrinkThumb}"></div>
-                            <div><h4>${coctails[i].strInstructions}</h4></div>
-                            <div>Served in: ${coctails[i].strGlass}</div>
-                            <div>Short list of ingridients: ${filteredIngredients}</div>`
-    }
-    }
-
-    catch (error) {
-        console.log(error);
-    }
-}
+        }
 
 detailedCoctail()
 

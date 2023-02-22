@@ -39,6 +39,7 @@ const button = document.querySelector("button")
         }  
 };
 
+
 function checkLength(value, len) {
     if (value.trim().length > len) {
         return true;
@@ -58,7 +59,7 @@ function validateEmail(email) {
 
 
 function checkIfButtonIsDisabled() {
-    if (validateForm === true) {
+    if (checkLength(firstName.value, 1) == true || checkLength(subject.value, 10) == true || validateEmail(email.value) == true || checkLength(address.value, 25) == true) {
         button.disabled = false;
     } else {
         message.innerHTML = "";
