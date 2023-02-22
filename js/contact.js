@@ -53,8 +53,8 @@ function validateEmail(email) {
     return emailMatches;
 };
 
+    form.addEventListener("submit", validateForm);
 
-form.addEventListener("submit", validateForm);
 
 
 function checkIfButtonIsDisabled() {
@@ -80,6 +80,10 @@ firstName.addEventListener("keyup", checkIfButtonIsDisabled);
 subject.addEventListener("keyup", checkIfButtonIsDisabled);
 email.addEventListener("keyup", checkIfButtonIsDisabled);
 address.addEventListener("keyup", checkIfButtonIsDisabled);
+
+window.addEventListener("load", () => {
+    document.querySelector(".loader").classList.add("loader--hidden")
+});
 
 
 

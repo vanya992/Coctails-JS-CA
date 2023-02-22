@@ -23,13 +23,25 @@ async function detailedCoctail() {
 
         for (let i = 0; i < coctails.length; i++) {
             
-        details.innerHTML = `<h1>${coctails.strDrink}</h1>
-                            <div><img class="img" src="${coctails.strImageSource}"></div>
-                            <div><h4>${coctails.strInstructions}</h4></div>
-                            <div>Made in: ${coctails.strGlass}</div>
-                            <div>Short list of ingridients: ${coctails.strIngridient1}, ${coctails.strIngridient2}, ${coctails.strIngridient3}, ${coctails.strIngridient4}, ${coctails.strIngridient5}, ${coctails.strIngridient6}, ${coctails.strIngridient7}, ${coctails.strIngridient8}, ${coctails.strIngridient9}, ${coctails.strIngridient10}</div>`
-       
-}
+            const listOfIngredients = [coctails[i].strIngredient1, coctails[i].strIngredient2, coctails[i].strIngredient3,
+            coctails[i].strIngredient4, coctails[i].strIngredient5, coctails[i].strIngredient6, coctails[i].strIngredient7,
+                coctails[i].strIngredient8, coctails[i].strIngredient9, coctails[i].strIngredient10];
+            
+            
+            const filteredIngredients = listOfIngredients.filter(filterIngredients)
+
+            function filterIngredients(listOfIngredients) {
+                if (listOfIngredients !== null) {
+                    return true;
+                }
+            }
+            
+            details.innerHTML = `<h1>${coctails[i].strDrink}</h1>
+                            <div><img class="img" src="${coctails[i].strDrinkThumb}"></div>
+                            <div><h4>${coctails[i].strInstructions}</h4></div>
+                            <div>Served in: ${coctails[i].strGlass}</div>
+                            <div>Short list of ingridients: ${filteredIngredients}</div>`
+    }
     }
 
     catch (error) {
@@ -38,3 +50,7 @@ async function detailedCoctail() {
 }
 
 detailedCoctail()
+
+window.addEventListener("load", () => {
+    document.querySelector(".loader").classList.add("loader--hidden")
+});

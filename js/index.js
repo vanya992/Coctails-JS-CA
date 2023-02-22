@@ -36,7 +36,8 @@ async function getDrink() {
     }
 }
 
-getDrink();
+ getDrink();
+
 
 window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("loader--hidden")
