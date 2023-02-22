@@ -9,7 +9,7 @@ const id = params.get("id");
 console.log(id);
 
 
-const url = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php?id=" + id;
+const url = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php/" + id;
 
 async function detailedCoctail() {
     try {
@@ -19,16 +19,16 @@ async function detailedCoctail() {
 
         const coctails = results.drinks;
 
-        console.log(coctails);
+        // console.log(coctails);
 
         for (let i = 0; i < coctails.length; i++) {
             
             const listOfIngredients = [coctails[i].strIngredient1, coctails[i].strIngredient2, coctails[i].strIngredient3,
-            coctails[i].strIngredient4, coctails[i].strIngredient5, coctails[i].strIngredient6, coctails[i].strIngredient7,
+                coctails[i].strIngredient4, coctails[i].strIngredient5, coctails[i].strIngredient6, coctails[i].strIngredient7,
                 coctails[i].strIngredient8, coctails[i].strIngredient9, coctails[i].strIngredient10];
             
             
-            const filteredIngredients = listOfIngredients.filter(filterIngredients)
+            const filteredIngredients = listOfIngredients.filter(filterIngredients).join(" + ")
 
             function filterIngredients(listOfIngredients) {
                 if (listOfIngredients !== null) {
@@ -51,6 +51,6 @@ async function detailedCoctail() {
 
 detailedCoctail()
 
-window.addEventListener("load", () => {
-    document.querySelector(".loader").classList.add("loader--hidden")
-});
+// window.addEventListener("load", () => {
+//     document.querySelector(".loader").classList.add("loader--hidden")
+// });

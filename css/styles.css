@@ -8,11 +8,12 @@
     src: url("/fonts/Cormorant_Garamond/CormorantGaramond-Regular.ttf") format("truetype");
 }
 
+
 body {
     font-family: "Garamond";
-    background-color: #000;
-    color: orange;
+    background-image: linear-gradient(135deg, violet, purple);
     width: 100vw;
+    color: black;
 }
 
 .loader {
@@ -37,7 +38,7 @@ body {
     content: "";
     width: 10em;
     height: 10em;
-    border-top: 1em solid orange;
+    border-top: 1em solid purple;
     border-right: 1em solid transparent;
     border-radius: 50%;
     margin: auto;
@@ -50,7 +51,7 @@ body {
 }
 
 a {
-    color: orange;
+    color: black;
     text-decoration: none;
 }
 
@@ -67,14 +68,16 @@ nav {
 
 .container {
     margin-top: 50px;
+    margin-left: 50px;
     margin: 100px;
     border-style: double;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px;
 }
 
 .cards {
-    border-style: inherit;
+    border: 5px solid violet;
     margin: 20px;
 }
 
@@ -94,7 +97,6 @@ nav {
 /* Contact Page */
 h1 {
     text-align: center;
-    color: orange;
     font-size: 3em;
     text-transform: uppercase;
 }
@@ -108,7 +110,6 @@ form {
 }
 
 label {
-    color: orange;
     font-size: 1.5em;
 }
 
@@ -126,11 +127,12 @@ input {
 }
 
 button {
+    border: 0;
     padding: 10px 15px;
     margin: 10px auto;
     margin-bottom: 20px;
     align-self: center;
-    color: orange;
+    color: pink;
     background-color: #000;
     border-radius: 5px;
 }

@@ -25,6 +25,7 @@ async function getDrink() {
             detailsContainer.innerHTML += `<a href="details.html?id=${coctails[i].idDrink}" class="cards">
                                           <div><h2>${coctails[i].strDrink}</h2></div>
                                         <div><img src="${coctails[i].strDrinkThumb}" class="img"></div>
+                                        <div><h4>${coctails[i].strAlcoholic}</h4></div>
                                             </a>`
                  
         }
