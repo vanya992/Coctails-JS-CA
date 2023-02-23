@@ -18,7 +18,7 @@ const url = "https://www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + id;
 
                 const results = await response.json();
 
-                const coctails = results.drinks;
+                const coctails = results.drinks[0];
 
                 console.log(coctails);
                     
