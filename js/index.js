@@ -18,8 +18,11 @@ async function getDrink() {
 
         const coctails = results.drinks;
 
+        // making HTML clean for innerHTML text
+
         detailsContainer.innerHTML = "";
 
+        // looping through objects to display them 
         for (let i = 0; i < coctails.length; i++) {
 
             detailsContainer.innerHTML += `<a href="details.html?id=${coctails[i].idDrink}" class="cards">
@@ -39,6 +42,8 @@ async function getDrink() {
 
  getDrink();
 
+
+ // hiding loader after page loads
 
 window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("loader--hidden")
