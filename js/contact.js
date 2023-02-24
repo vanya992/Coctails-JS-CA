@@ -44,10 +44,12 @@ const button = document.querySelector("button")
             showSuccessMessage = false;
         }  
         if (showSuccessMessage) {
-            message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`;
+                    message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`;
+                    form.reset();
+        } else {
+                    message.innerHTML = "";
         }
         
-        form.reset();
 };
 
 
@@ -70,11 +72,12 @@ function validateEmail(email) {
 
 
 
-function checkIfButtonIsDisabled() {
-    if (validateForm === true) {
-        button.disabled = false;
+function checkIfButtonIsDisabled(event) {
+    event.preventDefault();
+
+    if (validateForm) {
+       button.disabled = false;
     } else {
-        message.innerHTML = "";
         button.disabled = true;
     }
 }
@@ -83,11 +86,13 @@ function checkIfButtonIsDisabled() {
 
 function submitForm(event) {
     event.preventDefault();
+    form.reset();
+     
 
     
 }
 
-form.addEventListener("submit", submitForm);
+form.addEventListener("submit", checkIfButtonIsDisabled);
 
 firstName.addEventListener("keyup", checkIfButtonIsDisabled);
 subject.addEventListener("keyup", checkIfButtonIsDisabled);

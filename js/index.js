@@ -45,8 +45,7 @@ async function getDrink() {
 
  // hiding loader after page loads
 
-window.addEventListener("load", () => {
+
+loaderListener = window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("loader--hidden")
 });
-
-
