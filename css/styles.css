@@ -12,8 +12,7 @@
 body {
     font-family: "Garamond";
     background-image: linear-gradient(45deg, violet, purple);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     color: black;
     margin: 0;
 }
@@ -155,14 +154,19 @@ button:disabled {
 .message_success {
     color: green;
     background: white;
-
 }
 
+/* Details page */
 
 .details_card {
-    margin: auto;
+    padding: 20px;
+    margin: 150px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h3 {
+    padding: 50px;
 }
 

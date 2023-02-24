@@ -14,29 +14,40 @@ const button = document.querySelector("button")
 
         event.preventDefault();
 
+        let showSuccessMessage = true;
+
         if (checkLength(firstName.value, 0) === true) {
             nameError.style.display = "none";
         } else {
             nameError.style.display = "block";
+            showSuccessMessage = false;
         };
 
         if (checkLength(subject.value, 10) === true) {
             subjectError.style.display = "none";
         } else {
             subjectError.style.display = "block";
+            showSuccessMessage = false;
         }
 
         if (validateEmail(email.value) === true) {
             emailError.style.display = "none";
         } else {
             emailError.style.display = "block";
+            showSuccessMessage = false;
         }
 
         if (checkLength(address.value, 25) === true) {
             addressError.style.display = "none";
         } else {
             addressError.style.display = "block";
+            showSuccessMessage = false;
         }  
+        if (showSuccessMessage) {
+            message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`;
+        }
+        
+        form.reset();
 };
 
 
@@ -68,20 +79,20 @@ function checkIfButtonIsDisabled() {
     }
 }
 
-// function submitForm(event) {
-//     event.preventDefault();
 
-//     message.innerHTML = `<div class="message_succes"> Your message has been sent</div>`
+
+function submitForm(event) {
+    event.preventDefault();
+
     
-//     form.reset();
-// }
+}
 
-// form.addEventListener("submit", submitForm);
+form.addEventListener("submit", submitForm);
 
-// firstName.addEventListener("keyup", checkIfButtonIsDisabled);
-// subject.addEventListener("keyup", checkIfButtonIsDisabled);
-// email.addEventListener("keyup", checkIfButtonIsDisabled);
-// address.addEventListener("keyup", checkIfButtonIsDisabled);
+firstName.addEventListener("keyup", checkIfButtonIsDisabled);
+subject.addEventListener("keyup", checkIfButtonIsDisabled);
+email.addEventListener("keyup", checkIfButtonIsDisabled);
+address.addEventListener("keyup", checkIfButtonIsDisabled);
 
 window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("loader--hidden")

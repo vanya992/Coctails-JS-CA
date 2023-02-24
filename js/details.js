@@ -36,10 +36,10 @@ const url = "https://www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + id;
                 };
             
                 details.innerHTML += `<h1>${coctails.strDrink}</h1>
-                                    <div><img class="img" src="${coctails.strDrinkThumb}"></div>
-                                    <div><h4>${coctails.strInstructions}</h4></div>
-                                    <div>Served in: ${coctails.strGlass}</div>
-                                    <div>Short list of ingridients: ${filteredIngredients}</div>`
+                                    <div><img class="img" src="${coctails.strDrinkThumb}"> </div>
+                                    <div><h3>${coctails.strInstructions}</h3></div>
+                                    <div><p>Served in: ${coctails.strGlass}</p></div>
+                                    <div><p>Short list of ingridients: ${filteredIngredients}</p></div>`
         }
             
 
