@@ -1,1 +1,3 @@
 # js-course-assignment
+
+Verry happy and pleased that I managed to solve so many issues by myself. Of course I had some help and inputs from my beautiful colleagues that are gold in this situations, and youtube helped me make a loader so that I don´t copy everything from the lessons, to learn to find resources on the other side as well, and even though it can be done prettier, I hope you will be satisfied with my work same as me. 

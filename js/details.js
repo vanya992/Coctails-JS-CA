@@ -1,3 +1,4 @@
+
 const details = document.querySelector(".details_card");
 
 const queryString = document.location.search;
@@ -34,6 +35,9 @@ const url = "https://www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + id;
                             return true;
                         }
                 };
+                const newPageTitle = `${coctails.strDrink}`
+
+                document.title = newPageTitle;
             
                 details.innerHTML += `<h1>${coctails.strDrink}</h1>
                                     <div><img class="img" src="${coctails.strDrinkThumb}"> </div>
@@ -45,11 +49,13 @@ const url = "https://www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + id;
 
             catch (error) {
                 console.log(error);
+                details.innerHTML = errorMessage("An error has occured. Coctail is not to be found at the moment.");
             }
         }
 
-detailedCoctail()
+detailedCoctail();
 
-// window.addEventListener("load", () => {
-//     document.querySelector(".loader").classList.add("loader--hidden")
-// });
+
+window.addEventListener("load", () => {
+    document.querySelector(".loader").classList.add("loader--hidden")
+});

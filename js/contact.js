@@ -49,6 +49,8 @@ const button = document.querySelector("button")
         } else {
                     message.innerHTML = "";
         }
+
+        checkIfButtonIsDisabled();
         
 };
 
@@ -72,33 +74,31 @@ function validateEmail(email) {
 
 
 
-function checkIfButtonIsDisabled(event) {
-    event.preventDefault();
-
-    if (validateForm) {
-       button.disabled = false;
-    } else {
-        button.disabled = true;
-    }
-}
 
 
 
 function submitForm(event) {
     event.preventDefault();
-    form.reset();
-     
-
-    
+    form.reset(); 
 }
 
-form.addEventListener("submit", checkIfButtonIsDisabled);
 
-firstName.addEventListener("keyup", checkIfButtonIsDisabled);
-subject.addEventListener("keyup", checkIfButtonIsDisabled);
-email.addEventListener("keyup", checkIfButtonIsDisabled);
-address.addEventListener("keyup", checkIfButtonIsDisabled);
 
-window.addEventListener("load", () => {
-    document.querySelector(".loader").classList.add("loader--hidden")
-});
+
+// function checkIfButtonIsDisabled(event) {
+//     event.preventDefault();
+
+//     if (validateForm) {
+//        button.disabled = false;
+//     } else {
+//         button.disabled = true;
+//     }
+// }
+
+// form.addEventListener("submit", checkIfButtonIsDisabled);
+
+// firstName.addEventListener("keyup", checkIfButtonIsDisabled);
+// subject.addEventListener("keyup", checkIfButtonIsDisabled);
+// email.addEventListener("keyup", checkIfButtonIsDisabled);
+// address.addEventListener("keyup", checkIfButtonIsDisabled);
+

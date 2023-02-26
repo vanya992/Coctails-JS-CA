@@ -3,7 +3,6 @@ const detailsContainer = document.querySelector(".container");
 const messageContainer = document.querySelector(".message");
 
 
-
 const url = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php";
 
 
@@ -30,22 +29,26 @@ async function getDrink() {
                                         <div><img src="${coctails[i].strDrinkThumb}" class="img"></div>
                                         <div><h4>${coctails[i].strAlcoholic}</h4></div>
                                             </a>`
+            
+            const newTitle = `${coctails[i].strCategory} ${coctails[i].strAlcoholic}`;
+
+            document.title = newTitle;
                  
         }
     }
 
     catch (error) {
         console.log(error);
-        messageContainer.innerHTML = error;
+        messageContainer.innerHTML = errorMessage("An error has occured.");
     }
 }
 
  getDrink();
 
 
+
  // hiding loader after page loads
 
-
-loaderListener = window.addEventListener("load", () => {
+window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("loader--hidden")
 });
